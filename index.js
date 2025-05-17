@@ -7,6 +7,7 @@ const codeLines = document.getElementById('line-nums');
 const themeStylesheet = document.getElementById('theme-style');
 const themeSelector = document.getElementById('themes');
 const codeContainer = document.getElementById('code-container');
+const printFilename = document.getElementById('print-filename');
 let selectedLanguage = localStorage.getItem('language') || 'javascript';
 let selectedTheme = localStorage.getItem('theme') || 'github-dark';
 let codeText = localStorage.getItem('code') || 'console.log("Hello World")';
@@ -45,7 +46,7 @@ printBtn.addEventListener('click', () => {
             lineNumbers[i].style.color = '#2d3436';
         }
     }
-    document.title = documentNameInput.value || 'Code';
+    printFilename.textContent = document.title = documentNameInput.value || 'Code';
     window.print();
     document.title = 'Convert Code to PDF Online: Free Tool for Programming Languages';
 });
